@@ -4,13 +4,13 @@ module IbRadik
 
       def replace(array)
         list_1 = []
-        for i in array do
-          if i >= 0
-            list_1.append(array.max)
-          else
-            list_1.append(i)
-          end
-        end
+        # for i in array do
+        #   if i >= 0
+        #     list_1.append(array.max)
+        #   else
+        #     list_1.append(i)
+        #   end
+        # end
 
         list = array.map { |x| x >= 0 ? array.max : x }
         return list

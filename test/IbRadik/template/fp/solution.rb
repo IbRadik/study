@@ -36,12 +36,16 @@ module IbRadik
         # puts needs_films
         #
         #
-        films_needs_rate = _films.select { |film| film['rating_kinopoisk'].to_f >= _threshold }
-        needs_films = films_needs_rate.each { |film| film['name']}.
-            reduce(0){ |sum, film| film['name'].include?(elem) ? sum + 1 : sum }
+        # films_needs_rate = _films.select { |film| film['rating_kinopoisk'].to_f >= _threshold }
+        # needs_films = films_needs_rate.each { |film| film['name']}.
+        #     reduce(0){ |sum, film| film['name'].include?(elem) ? sum + 1 : sum }
 
+        # sum = 0
+        # var = _films.select { |film| film['rating_kinopoisk'].to_f >= _threshold && film['name'].include?(elem) }
+        # var.length
 
-        return needs_films
+        _films.count{ |film| film['rating_kinopoisk'].to_f >= _threshold && film['name'].include?(elem) }
+
       end
     end
   end
